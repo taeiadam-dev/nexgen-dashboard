@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import ShipmentList from './components/ShipmentList'
+import ShipmentMap from './components/ShipmentMap'
 
 function App() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -77,34 +79,8 @@ function App() {
           </section>
 
           {/* Main Content Area */}
-          <section className="glass-panel" style={{ padding: '2rem', minHeight: '400px' }}>
-            <h3 style={{ marginBottom: '1.5rem' }}>Recent Activity</h3>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {[1, 2, 3].map(item => (
-                <div key={item} style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  padding: '1rem', 
-                  background: 'rgba(255,255,255,0.02)',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(255,255,255,0.05)'
-                }}>
-                  <div style={{ 
-                    width: '40px', height: '40px', 
-                    borderRadius: '50%', 
-                    background: 'linear-gradient(135deg, #6366f1, #ec4899)',
-                    marginRight: '1rem'
-                  }}></div>
-                  <div style={{ flex: 1 }}>
-                    <h5 style={{ margin: 0, fontSize: '0.95rem' }}>User joined platform</h5>
-                    <p className="text-secondary" style={{ margin: 0, fontSize: '0.8rem' }}>2 minutes ago</p>
-                  </div>
-                  <button className="btn btn-glass" style={{ padding: '0.4rem 1rem', fontSize: '0.8rem' }}>View</button>
-                </div>
-              ))}
-            </div>
-          </section>
+          <ShipmentMap />
+          <ShipmentList />
         </main>
       </div>
     </>
